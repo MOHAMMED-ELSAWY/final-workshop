@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import NewOrder from './pages/NewOrder';
@@ -9,7 +9,7 @@ import ExportPage from './pages/Export';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Dashboard />} />
@@ -21,6 +21,6 @@ export default function App() {
           <Route path="export" element={<ExportPage />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
