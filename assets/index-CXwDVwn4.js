@@ -425,6 +425,7 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
             padding: 0;
             background: #fff;
             height: 100%;
+            overflow: hidden;
           }
           body {
             font-family: 'Arial', 'Tahoma', sans-serif;
@@ -433,10 +434,10 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
 
           /* ── هيكل ورقة الـ A4 ── */
           .page {
-            width: 210mm;
-            min-height: 297mm;
-            margin: 0 auto;
-            padding: 20mm 25mm 25mm 25mm;
+            width: 100%;
+            height: 100vh;
+            max-height: 297mm;
+            padding: 15mm 20mm;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -448,40 +449,40 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-bottom: 20px;
+            padding-bottom: 12px;
             border-bottom: 3px solid #dc2626;
           }
-          .letterhead img { height: 75px; width: auto; object-fit: contain; }
+          .letterhead img { height: 65px; width: auto; object-fit: contain; }
           .letterhead .company-name {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 900;
             color: #dc2626;
             margin: 0;
           }
           .letterhead .company-sub {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
             color: #374151;
-            margin: 4px 0 0;
+            margin: 3px 0 0;
           }
 
           /* ── العنوان الرئيسي ── */
           .doc-title {
             text-align: center;
-            margin: 40px 0 30px;
+            margin: 25px 0 20px;
           }
           .doc-title h1 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 900;
             margin: 0;
             text-decoration: underline;
-            text-underline-offset: 8px;
+            text-underline-offset: 6px;
             text-decoration-color: #dc2626;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
           }
           .doc-title .date {
-            margin-top: 10px;
-            font-size: 15px;
+            margin-top: 8px;
+            font-size: 14px;
             font-weight: 700;
             color: #4b5563;
           }
@@ -490,20 +491,20 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
           .body-content {
             display: flex;
             flex-direction: column;
-            gap: 28px;
-            font-size: 19px;
-            line-height: 2.1;
+            gap: 20px;
+            font-size: 17px;
+            line-height: 1.9;
             color: #111827;
             flex-grow: 1;
           }
           .to-line {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 800;
           }
           .greeting {
             font-weight: 800;
             color: #1f2937;
-            font-size: 19px;
+            font-size: 17px;
           }
           .main-text {
             font-weight: 600;
@@ -516,30 +517,30 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
           .purpose-box {
             background-color: #f9fafb;
             border-right: 5px solid #dc2626;
-            padding: 18px 22px;
-            margin: 15px 0;
+            padding: 14px 18px;
+            margin: 10px 0;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 16px;
             border-radius: 6px;
-            line-height: 1.9;
+            line-height: 1.8;
           }
           .purpose-title {
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             color: #dc2626;
             font-weight: 900;
-            font-size: 19px;
+            font-size: 17px;
           }
           .closing {
             font-weight: 800;
-            font-size: 19px;
-            margin-top: 20px;
+            font-size: 17px;
+            margin-top: 10px;
           }
 
           /* ── التذييل والتوقيعات ── */
           .footer {
-            margin-top: 50px;
-            padding-top: 25px;
+            margin-top: 30px;
+            padding-top: 15px;
             border-top: 1px solid #e5e7eb;
             display: flex;
             align-items: flex-end;
@@ -549,21 +550,21 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
             text-align: center;
           }
           .signature-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 800;
             color: #1f2937;
           }
           .signature-line {
-            margin-top: 55px;
-            width: 180px;
+            margin-top: 40px;
+            width: 160px;
             border-bottom: 2px dashed #6b7280;
           }
           .stamp-container img {
-            height: 110px;
+            height: 90px;
             width: auto;
           }
 
-          /* ── قواعد الطباعة لورقة A4 ── */
+          /* ── قواعد الطباعة لورقة A4 واحدة ── */
           @page {
             size: A4 portrait;
             margin: 0;
@@ -572,12 +573,16 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
             html, body {
               width: 210mm;
               height: 297mm;
+              overflow: hidden !important;
             }
             .page {
               width: 100%;
-              height: 100%;
-              min-height: 100vh;
+              height: 297mm;
+              max-height: 297mm;
+              padding: 15mm 20mm;
               box-shadow: none;
+              page-break-after: avoid;
+              page-break-inside: avoid;
             }
           }
         </style>
@@ -613,7 +618,7 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
               </p>
 
               <div class="purpose-box">
-                <span class="purpose-title"> الغرض من التفويض:</span>
+                <span class="purpose-title">الغرض من التفويض:</span>
                 ${_}
               </div>
 
