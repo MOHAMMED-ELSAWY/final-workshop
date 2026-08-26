@@ -417,27 +417,30 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
       <html lang="ar" dir="rtl">
       <head>
         <meta charset="UTF-8" />
-        <title>خطاب تفويض</title>
+        <title>خطاب تفويض - ${a}</title>
         <style>
           * { box-sizing: border-box; }
           html, body {
             margin: 0;
             padding: 0;
             background: #fff;
-            height: auto;
+            height: 100%;
           }
           body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Arial', 'Tahoma', sans-serif;
             color: #111;
           }
+
+          /* ── هيكل ورقة الـ A4 ── */
           .page {
-            max-width: 750px;
+            width: 210mm;
+            min-height: 297mm;
             margin: 0 auto;
-            padding: 30px 45px;
+            padding: 20mm 25mm 25mm 25mm;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 90vh;
+            box-sizing: border-box;
           }
 
           /* ── الهيدر ── */
@@ -445,87 +448,99 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-bottom: 12px;
-            border-bottom: 2px solid #dc2626;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #dc2626;
           }
-          .letterhead img { height: 60px; width: auto; object-fit: contain; }
+          .letterhead img { height: 75px; width: auto; object-fit: contain; }
           .letterhead .company-name {
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 900;
             color: #dc2626;
             margin: 0;
           }
           .letterhead .company-sub {
-            font-size: 13px;
+            font-size: 15px;
             font-weight: 700;
             color: #374151;
-            margin: 2px 0 0;
+            margin: 4px 0 0;
           }
 
           /* ── العنوان الرئيسي ── */
           .doc-title {
             text-align: center;
-            margin-top: 20px;
+            margin: 40px 0 30px;
           }
           .doc-title h1 {
-            font-size: 22px;
+            font-size: 28px;
             font-weight: 900;
             margin: 0;
             text-decoration: underline;
-            text-underline-offset: 6px;
+            text-underline-offset: 8px;
             text-decoration-color: #dc2626;
+            letter-spacing: 1px;
           }
           .doc-title .date {
-            margin-top: 6px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #6b7280;
+            margin-top: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #4b5563;
           }
 
           /* ── جسم الخطاب ── */
           .body-content {
-            margin-top: 25px;
             display: flex;
             flex-direction: column;
-            gap: 18px;
-            font-size: 16px;
-            line-height: 1.8;
+            gap: 28px;
+            font-size: 19px;
+            line-height: 2.1;
             color: #111827;
+            flex-grow: 1;
           }
           .to-line {
-            font-size: 17px;
+            font-size: 20px;
             font-weight: 800;
           }
           .greeting {
-            font-weight: 700;
-            color: #374151;
+            font-weight: 800;
+            color: #1f2937;
+            font-size: 19px;
           }
           .main-text {
-            font-weight: 500;
+            font-weight: 600;
             text-align: justify;
           }
           .highlight {
-            font-weight: 800;
+            font-weight: 900;
             color: #000;
           }
           .purpose-box {
             background-color: #f9fafb;
-            border-right: 4px solid #dc2626;
-            padding: 12px 16px;
-            margin: 6px 0;
-            font-weight: 600;
-            font-size: 16px;
-            border-radius: 4px;
+            border-right: 5px solid #dc2626;
+            padding: 18px 22px;
+            margin: 15px 0;
+            font-weight: 700;
+            font-size: 18px;
+            border-radius: 6px;
+            line-height: 1.9;
+          }
+          .purpose-title {
+            display: block;
+            margin-bottom: 6px;
+            color: #dc2626;
+            font-weight: 900;
+            font-size: 19px;
           }
           .closing {
             font-weight: 800;
-            margin-top: 10px;
+            font-size: 19px;
+            margin-top: 20px;
           }
 
           /* ── التذييل والتوقيعات ── */
           .footer {
-            margin-top: 40px;
-            padding-top: 15px;
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid #e5e7eb;
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
@@ -534,35 +549,35 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
             text-align: center;
           }
           .signature-title {
-            font-size: 15px;
+            font-size: 18px;
             font-weight: 800;
-            color: #374151;
+            color: #1f2937;
           }
           .signature-line {
-            margin-top: 35px;
-            width: 150px;
-            border-bottom: 1px dashed #9ca3af;
+            margin-top: 55px;
+            width: 180px;
+            border-bottom: 2px dashed #6b7280;
           }
           .stamp-container img {
-            height: 80px;
+            height: 110px;
             width: auto;
           }
 
-          /* ── تكييف الطباعة لورقة واحدة A4 ── */
+          /* ── قواعد الطباعة لورقة A4 ── */
           @page {
             size: A4 portrait;
             margin: 0;
           }
           @media print {
             html, body {
-              height: 100%;
-              overflow: hidden;
+              width: 210mm;
+              height: 297mm;
             }
             .page {
-              padding: 15mm 20mm;
-              height: 100vh;
-              max-width: 100%;
-              box-sizing: border-box;
+              width: 100%;
+              height: 100%;
+              min-height: 100vh;
+              box-shadow: none;
             }
           }
         </style>
@@ -590,15 +605,15 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
 
               <p class="main-text">
                 نفيد سيادتكم علمًا بأننا شركة <span class="highlight">الألمانية لتشغيل المعادن والتقطيع بالليزر</span> قد فوضنا الأستاذ /
-                <span class="highlight" style="text-decoration: underline; text-underline-offset: 4px;">
+                <span class="highlight" style="text-decoration: underline; text-underline-offset: 5px;">
                   ${a||".........................."}
                 </span>
-                ${n?`, حامل رقم قومي: <span class="highlight" dir="ltr">${n}</span>`:""}
-                ${A?`, المقيم في: <span class="highlight">${A}</span>`:""}.
+                ${n?`، حامل رقم قومي: <span class="highlight" dir="ltr">${n}</span>`:""}
+                ${A?`، المقيم في: <span class="highlight">${A}</span>`:""}.
               </p>
 
               <div class="purpose-box">
-                <span style="display:block; margin-bottom: 4px; color: #dc2626; font-weight: 800;">الغرض من التفويض:</span>
+                <span class="purpose-title"> الغرض من التفويض:</span>
                 ${_}
               </div>
 
