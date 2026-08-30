@@ -704,7 +704,7 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
       padding: 40px;
       width: 780px;
       margin: 0 auto;
-      font-size: 17px;
+      font-size: 24px;
     }
     .doc .header {
       display: flex;
