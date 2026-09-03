@@ -653,7 +653,7 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
       padding: 40px;
       width: 780px;
       margin: 0 auto;
-      font-size: 22px;
+      font-size: 19px;
     }
     .doc .header {
       display: flex;
@@ -664,28 +664,28 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
       margin-bottom: 24px;
     }
     .doc .header img { height: 110px; width: auto; max-width: 100%; object-fit: contain; }
-    .doc p { font-size: 22px; line-height: 1.9; margin: 0 0 10px; }
+    .doc p { font-size: 19px; line-height: 1.9; margin: 0 0 10px; }
     .doc .section-title {
       color: #dc2626;
       font-weight: bold;
-      font-size: 24px;
+      font-size: 21px;
       text-decoration: underline;
       margin: 22px 0 10px;
     }
-    .doc .tech-offer { white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; font-size: 22px; line-height: 2; margin-bottom: 10px; }
+    .doc .tech-offer { white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; font-size: 19px; line-height: 2; margin-bottom: 10px; }
     .doc table { width: 100%; table-layout: fixed; border-collapse: collapse; margin-top: 8px; }
     .doc th, .doc td {
       border: 1px solid #000;
       padding: 10px 6px;
       text-align: center;
-      font-size: 20px;
+      font-size: 17px;
       word-wrap: break-word;
       overflow-wrap: break-word;
       word-break: break-word;
       vertical-align: middle;
     }
     .doc th { background: #fde047; font-weight: bold; }
-    .doc .terms { white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; font-size: 20px; line-height: 2; margin-top: 10px; }
+    .doc .terms { white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; font-size: 17px; line-height: 2; margin-top: 10px; }
     .doc .stamp-row { display: flex; justify-content: flex-end; margin-top: 24px; }
     .doc .stamp-row img { height: 90px; width: auto; }
 
@@ -716,7 +716,7 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
           <img src="${um}" alt="الألمانية لتشغيل وتقطيع المعادن بالليزر" />
         </div>
 
-        <p style="text-align:left; font-weight:600; font-size:18px; color:#333; margin-bottom:14px;">
+        <p style="text-align:left; font-weight:600; font-size:15px; color:#333; margin-bottom:14px;">
           التاريخ: ${new Intl.DateTimeFormat("en-US",{day:"numeric",month:"numeric",year:"numeric"}).format(new Date(he))}
         </p>
 
