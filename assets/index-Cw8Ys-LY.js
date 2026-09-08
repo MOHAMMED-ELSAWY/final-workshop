@@ -741,7 +741,7 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const s of t
               <th>م</th>
               <th>الصنف</th>
               <th>العدد</th>
-              <th>سعر الوحده</th>
+              <th> السعر </th>
               <th>السعر الكلي</th>
             </tr>
           </thead>
